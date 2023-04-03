@@ -19,6 +19,10 @@ If you prefer to use `docker run`, you can pull the image from [Docker Hub](http
 
 The Discord bot will begin displaying torrent information in the specified Discord channel.
 
+## In discord 
+
+- ![image exemple](pics/discordInterface.png)
+
 ## Installation and Configuration with Docker Compose
 
 1. Clone this repository or download the following files into a new directory:
@@ -52,5 +56,3 @@ docker-compose down
 ```
 
 If you want to update the bot code, make the necessary changes to the Python file, then rebuild and relaunch the service using the command `docker-compose up -d --build`.
-
-Alternatively, if you are using `docker run`, stop the running container, pull the updated image from Docker Hub, and run the `docker run` command again.
