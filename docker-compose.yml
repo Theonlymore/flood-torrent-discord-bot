@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  torrent_bot:
+    build: .
+    container_name: torrent_bot
+    environment:
+      - BASE_URL=https://flood.exemple.net
+      - USERNAME=user
+      - PASSWORD=pass
+      - DISCORD_TOKEN=
+      - CHANNEL_ID=
+      - UPDATE_INTERVAL=20
