@@ -11,7 +11,7 @@ This project contains a Discord bot that fetches torrent information from a runn
 
 ## Quick Start with Docker Run
 
-If you prefer to use `docker run`, you can pull the image from Docker Hub (`flood-torrent-discord-bot`) and run the following command:
+If you prefer to use `docker run`, you can pull the image from [Docker Hub](https://hub.docker.com/r/onlymore/flood-torrent-discord-bot) (`flood-torrent-discord-bot`) and run the following command:
 
    ```
    docker run -e BASE_URL=<your_base_url> -e USERNAME=<your_username> -e PASSWORD=<your_password> -e DISCORD_TOKEN=<your_discord_token> -e CHANNEL_ID=<your_channel_id> -e UPDATE_INTERVAL=<update_interval> onlymore/flood-torrent-discord-bot
