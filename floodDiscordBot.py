@@ -76,20 +76,21 @@ async def check_torrent_status():
 
                 if percent_complete == 100:
                     completed_torrents.add(torrent_hash)
-                    message_content = f"Le téléchargement du torrent {name} est terminé à 100%."
+                    message_content = f"Torrent download {name} 100% complete."
+                    print("Torrent download {name} 100% complete.")
                 else:
                     message_content = (
-                        f"Nom du torrent: {name}\n"
-                        f"Taille du torrent: {size_bytes / (1024 * 1024):.2f} MB\n"
-                        f"Taille actuelle du téléchargement: {bytes_done / (1024 * 1024):.2f} MB\n"
-                        f"Vitesse de téléchargement: {down_rate / (1024 * 1024):.2f} MB/s\n"
-                        f"Date d'ajout du torrent: {date_added_formatted}\n"
-                        f"Pourcentage d'avancement: {percent_complete}%\n"
-                        f"Temps restant estimé: {eta_minutes} minutes et {eta_seconds_rounded} secondes\n"
-                        f"Chemin du torrent: {path}"
+                        f"Name: {name}\n"
+                        f"Percent complete: {percent_complete}%\n"
+                        f"Size: {bytes_done / (1024 * 1024):.2f} / {size_bytes / (1024 * 1024):.2f} MB\n"
+                        f"Download speed: {down_rate / (1024 * 1024):.2f} MB/s\n"
+                        f"Added: {date_added_formatted}\n"
+                        f"ETA: {eta_minutes} min and {eta_seconds_rounded} secs\n"
+                        f"Path: {path}"
                     )
 
                 if torrent_hash in sent_messages:
+                    print(message_content)
                     await sent_messages[torrent_hash].edit(content=message_content)
                 else:
                     sent_message = await channel.send(message_content)
