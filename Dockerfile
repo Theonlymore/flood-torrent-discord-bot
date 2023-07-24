@@ -1,6 +1,6 @@
 
 # Utiliser l'image officielle Python comme base
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Créer un répertoire de travail
 WORKDIR /app

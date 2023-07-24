@@ -76,8 +76,14 @@ async def check_torrent_status():
 
                 if percent_complete == 100:
                     completed_torrents.add(torrent_hash)
-                    message_content = f"Torrent download {name} 100% complete."
-                    print("Torrent download {name} 100% complete.")
+                    total_download_time = datetime.now() - datetime.fromtimestamp(date_added)
+                    message_content = (
+                        f"Torrent download {name} 100% complete.\n"
+                        f"Size: {size_bytes / (1024 * 1024):.2f} MB\n"
+                        f"Total download time: {total_download_time}\n"
+                        f"Path: {path}\n"
+                    )
+                    print(f"Torrent download {name} 100% complete.")
                 else:
                     message_content = (
                         f"Name: {name}\n"
